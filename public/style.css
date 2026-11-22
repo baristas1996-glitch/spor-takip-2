@@ -15,3 +15,6 @@
 .chart-data{margin-top:6px}
 
 .point-label{fill:#dce7da;font-size:7px;font-weight:700;paint-order:stroke;stroke:#101510;stroke-width:2px;stroke-linejoin:round}
+
+/* Keep graph series as strokes only; never fill the area under the line. */
+.weight-line,.kg-line{fill:none!important}
