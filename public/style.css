@@ -20,3 +20,5 @@
 .weight-line,.kg-line{fill:none!important}
 
 .axis-line{stroke:#9aa79b;stroke-width:1.1;opacity:.9}.vertical-grid{opacity:.35}
+
+.axis-line{stroke:#aab5aa;stroke-width:1.2;opacity:1}.grid-line{stroke:#829082;stroke-dasharray:3 4;stroke-width:1;opacity:.55}.vertical-grid{opacity:.4}
