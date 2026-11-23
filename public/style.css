@@ -22,3 +22,8 @@
 .axis-line{stroke:#9aa79b;stroke-width:1.1;opacity:.9}.vertical-grid{opacity:.35}
 
 .axis-line{stroke:#aab5aa;stroke-width:1.2;opacity:1}.grid-line{stroke:#829082;stroke-dasharray:3 4;stroke-width:1;opacity:.55}.vertical-grid{opacity:.4}
+
+header #account.user-label{max-width:46vw;min-width:0;padding:10px 13px;font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+header #account{max-width:46vw}
+
+.more-records{margin-top:10px;padding:10px;border-top:1px dashed #536253}.more-records summary{cursor:pointer;color:#a6f36b;font-weight:600;padding:6px 0}.movement-records{margin-top:8px}#allData[hidden]{display:none}
