@@ -36,3 +36,8 @@ header #account{max-width:46vw}
 .account-status{min-height:20px;margin:6px 0;color:#cbd7ca;font-size:13px}
 .account-status.error{color:#ffb0b0}
 .modal button:disabled{opacity:.55;cursor:wait}
+
+/* User-managed exercise library */
+.exercise-library{margin-top:10px;max-height:420px;overflow:auto}
+.exercise-library .item{gap:12px}
+.exercise-library .item span{min-width:0;overflow-wrap:anywhere}
