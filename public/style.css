@@ -27,3 +27,12 @@ header #account.user-label{max-width:46vw;min-width:0;padding:10px 13px;font-siz
 header #account{max-width:46vw}
 
 .more-records{margin-top:10px;padding:10px;border-top:1px dashed #536253}.more-records summary{cursor:pointer;color:#a6f36b;font-weight:600;padding:6px 0}.movement-records{margin-top:8px}#allData[hidden]{display:none}
+
+.home-notice{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;margin:12px 0;border-radius:12px;border:1px solid #465447;background:#18231a;color:#e9f5e7;font-weight:600}
+.home-notice.success{border-color:#527a42;background:#1b2a19;color:#c8f5b1}
+.home-notice.error{border-color:#8a4b4b;background:#2b1b1b;color:#ffc0c0}
+.home-notice.info{border-color:#465d75;background:#19232d;color:#c8ddf5}
+.notice-close{padding:3px 9px;background:transparent;color:inherit;font-size:22px;line-height:1}
+.account-status{min-height:20px;margin:6px 0;color:#cbd7ca;font-size:13px}
+.account-status.error{color:#ffb0b0}
+.modal button:disabled{opacity:.55;cursor:wait}
