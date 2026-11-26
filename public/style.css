@@ -43,14 +43,14 @@ header #account{max-width:46vw}
 .exercise-library .item span{min-width:0;overflow-wrap:anywhere}
 
 
-/* Prevent iOS Safari from zooming when form fields receive focus. */
-input, select, textarea { font-size: 16px !important; }
+/* iPhone: prevent automatic zoom when focusing form fields. */
+input, select, textarea { font-size:16px !important; }
 
-/* Exercise-specific machine settings and last-session summary */
-.machine-settings{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 12px;padding:10px;border:1px solid #2a352c;border-radius:12px;background:#111812}
-.machine-settings .field{margin:0;min-width:0}
-.machine-settings label{font-size:12px}
-.last-exercise-summary{margin:5px 0 10px;color:#aeb9ae;line-height:1.5;overflow-wrap:anywhere}
-.program-pick{padding:8px 0;border-bottom:1px solid #29332a}
-.program-pick>label{padding:4px 0}
-@media(max-width:420px){.machine-settings{grid-template-columns:1fr}}
+/* Exercise library machine settings */
+.exercise-library-entry { display:block; padding:14px 0; border-bottom:1px solid #29332a; }
+.exercise-library-entry:last-child { border-bottom:0; }
+.library-settings { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px; }
+.library-settings .field { margin:6px 0; min-width:0; }
+.library-settings input { min-width:0; }
+.last-exercise-summary { margin:10px 0 12px; color:#9aa79b; line-height:1.65; }
+.last-exercise-summary b { color:#cbd7ca; font-weight:600; }
