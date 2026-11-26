@@ -45,3 +45,12 @@ header #account{max-width:46vw}
 
 /* Prevent iOS Safari from zooming when form fields receive focus. */
 input, select, textarea { font-size: 16px !important; }
+
+/* Exercise-specific machine settings and last-session summary */
+.machine-settings{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 12px;padding:10px;border:1px solid #2a352c;border-radius:12px;background:#111812}
+.machine-settings .field{margin:0;min-width:0}
+.machine-settings label{font-size:12px}
+.last-exercise-summary{margin:5px 0 10px;color:#aeb9ae;line-height:1.5;overflow-wrap:anywhere}
+.program-pick{padding:8px 0;border-bottom:1px solid #29332a}
+.program-pick>label{padding:4px 0}
+@media(max-width:420px){.machine-settings{grid-template-columns:1fr}}
