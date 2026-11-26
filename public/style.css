@@ -54,3 +54,7 @@ input, select, textarea { font-size:16px !important; }
 .library-settings input { min-width:0; }
 .last-exercise-summary { margin:10px 0 12px; color:#9aa79b; line-height:1.65; }
 .last-exercise-summary b { color:#cbd7ca; font-weight:600; }
+
+/* Machine settings are managed in the exercise library. */
+.machine-settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}.machine-settings .field{margin:4px 0}.machine-settings input{font-size:16px}
+.last-exercise-summary{white-space:normal}
