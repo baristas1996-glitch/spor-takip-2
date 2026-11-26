@@ -43,18 +43,13 @@ header #account{max-width:46vw}
 .exercise-library .item span{min-width:0;overflow-wrap:anywhere}
 
 
-/* iPhone: prevent automatic zoom when focusing form fields. */
-input, select, textarea { font-size:16px !important; }
-
-/* Exercise library machine settings */
-.exercise-library-entry { display:block; padding:14px 0; border-bottom:1px solid #29332a; }
-.exercise-library-entry:last-child { border-bottom:0; }
-.library-settings { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px; }
-.library-settings .field { margin:6px 0; min-width:0; }
-.library-settings input { min-width:0; }
-.last-exercise-summary { margin:10px 0 12px; color:#9aa79b; line-height:1.65; }
-.last-exercise-summary b { color:#cbd7ca; font-weight:600; }
-
-/* Machine settings are managed in the exercise library. */
-.machine-settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}.machine-settings .field{margin:4px 0}.machine-settings input{font-size:16px}
-.last-exercise-summary{white-space:normal}
+/* Exercise library machine settings are saved on the library item */
+.exercise-library .library-exercise{display:block;padding:14px 0;border-bottom:1px solid #29332a}
+.exercise-library .library-exercise:last-child{border-bottom:0}
+.library-settings{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.library-settings .field{margin:0;min-width:0}
+.library-settings input{font-size:16px}
+.machine-settings-display{margin:10px 0;color:#c3cec2;font-size:14px}
+.last-exercise-summary{margin:12px 0;color:#c3cec2;font-size:14px;line-height:1.65}
+.last-date{font-weight:700;margin-bottom:4px}
+.last-sets>div{margin:3px 0}
