@@ -1,21 +1,22 @@
 (()=>{'use strict';
 const $=s=>document.querySelector(s),uid=()=>crypto.randomUUID?crypto.randomUUID():Date.now()+Math.random(),today=()=>new Date().toISOString().slice(0,10),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const DEFAULT_EXERCISES=['Bench Press','Incline Dumbbell Press','Chest Fly','Shoulder Press','Lateral Raise','Lat Pulldown','Seated Row','Barbell Row','Biceps Curl','Hammer Curl','Triceps Pushdown','Squat','Leg Press','Leg Curl','Calf Raise','Plank'];
-const cleanExercises=(items=[])=>{const seen=new Set();return (Array.isArray(items)?items:[]).filter(e=>{const name=String(e?.name||'').trim(),key=name.toLocaleLowerCase('tr');if(!name||DEFAULT_EXERCISES.some(x=>x.toLocaleLowerCase('tr')===key)||seen.has(key))return false;seen.add(key);return true}).map(e=>({...e,name:String(e.name).trim()}))};
+const cleanExercises=(items=[])=>{const byName=new Map();(Array.isArray(items)?items:[]).forEach(e=>{const name=String(e?.name||'').trim(),key=name.toLocaleLowerCase('tr');if(!name)return;const old=byName.get(key);byName.set(key,old?{...e,...old,...Object.fromEntries(Object.entries(e).filter(([k,v])=>v!==''&&v!=null)),name:old.name||name}:{...e,name})});return [...byName.values()]};
+const ensureRequestedExercises=items=>{const list=cleanExercises(items);for(const name of ['Calf Raise','Leg Curl'])if(!list.some(e=>e.name.toLocaleLowerCase('tr')===name.toLocaleLowerCase('tr')))list.push({id:uid(),name,seatSetting:'',footSetting:''});return list};
 const seed=()=>({exercises:[],programs:[],workouts:[],weights:[]});
 const ADJUSTABLE_EXERCISES=['Chest Supported Seated Row','Leg Curl','Leg Extension','Preacher Dumbbell Curl','Calf Raise'];
 const isDeadHang=name=>String(name||'').trim().toLocaleLowerCase('tr')==='dead hang';
 const hasAdjustments=name=>ADJUSTABLE_EXERCISES.some(x=>x.toLocaleLowerCase('tr')===String(name||'').trim().toLocaleLowerCase('tr'));
 const adjustmentFields=(e)=>`${e.seatSetting?`Koltuk: ${esc(e.seatSetting)}`:''}${e.seatSetting&&e.footSetting?' · ':''}${e.footSetting?`Ayak: ${esc(e.footSetting)}`:''}`;
 let state=seed(),tab='home',draft=null,homeMessage='',homeMessageType='info',token=localStorage.getItem('st2_token')||'',username=localStorage.getItem('st2_user')||'';
-function load(){try{let x=JSON.parse(localStorage.getItem('st2_state')||'null');if(x)state={...seed(),...x,exercises:cleanExercises(x.exercises)}}catch{}}
+function load(){try{let x=JSON.parse(localStorage.getItem('st2_state')||'null');if(x)state={...seed(),...x,exercises:ensureRequestedExercises(x.exercises)}}catch{}}
 let syncTimer=null,syncBusy=false;
 function save(){localStorage.setItem('st2_state',JSON.stringify(state));if(token){clearTimeout(syncTimer);syncTimer=setTimeout(()=>syncUp(false).catch(e=>toast('Bulut kaydı başarısız: '+e.message)),700)}}
 async function syncUp(show=true){if(!token)throw Error('Önce bulut hesabına giriş yap');if(syncBusy)throw Error('Eşitleme sürüyor, biraz sonra tekrar dene');syncBusy=true;try{await api('/api/state',{method:'PUT',body:JSON.stringify({state})});let check=await api('/api/state');if(!check.state)throw Error('Sunucu kaydı doğrulayamadı');localStorage.setItem('st2_state',JSON.stringify(state));if(show)toast('Bulut kaydı doğrulandı ✓')}finally{syncBusy=false}}
 
 function toast(t){if(/silindi|kaydedildi|güncellendi|bulut kaydı doğrulandı/i.test(String(t)))return;let x=$('#toast');if(!x)return;x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2200)}
 async function api(path,opt={}){let h={'Content-Type':'application/json',...(opt.headers||{})};if(token)h.Authorization='Bearer '+token;let r=await fetch(path,{...opt,headers:h}),d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.error||d.message||'Sunucu hatası '+r.status);return d}
-function mergeCloud(c){let old=state,base=seed(),merge=(a,b)=>[...new Map([...(a||[]),...(b||[])].map(x=>[x.id||JSON.stringify(x),x])).values()];state={...base,...c,exercises:cleanExercises(merge(old.exercises,c.exercises)),programs:merge(old.programs,c.programs),workouts:merge(old.workouts,c.workouts),weights:merge(old.weights,c.weights)}}
+function mergeCloud(c){let old=state,base=seed(),merge=(a,b)=>[...new Map([...(a||[]),...(b||[])].map(x=>[x.id||JSON.stringify(x),x])).values()];state={...base,...c,exercises:ensureRequestedExercises(merge(old.exercises,c.exercises)),programs:merge(old.programs,c.programs),workouts:merge(old.workouts,c.workouts),weights:merge(old.weights,c.weights)}}
 async function syncDown(){let r=await api('/api/state');if(r.state)mergeCloud(r.state);localStorage.setItem('st2_state',JSON.stringify(state));render()}
 function date(d){return new Date(d+'T12:00:00').toLocaleDateString('tr-TR')}
 function sets(w){return(w.exercises||[]).reduce((n,e)=>n+e.sets.length,0)}
