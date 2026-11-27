@@ -35,23 +35,21 @@
   </aside>
   <div class="workspace">
     <header class="topbar">
-      <div class="mobile-brand"><span>✚</span> Spor Takip <b>2.0</b></div>
+      <div class="mobile-brand"><span class="mobile-brand-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 18v12M11 12v24M17 18v12M31 18v12M37 12v24M43 18v12M17 24h14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span><span class="mobile-brand-copy"><span class="mobile-brand-name">Spor Takip <b>2.0</b></span><small>Antrenman Takip Uygulaması</small></span></div>
       <div class="top-page-title" id="topPageTitle">Ana Sayfa</div><div class="topbar-spacer"></div>
-      <div class="cloud-pill" id="cloudStatus"><span class="cloud-indicator">●</span> Bulut: Bağlı değil</div>
-      <button id="account" class="account-button" aria-label="Bulut hesabı">●</button>
+      <div class="cloud-pill" id="cloudStatus"><svg class="cloud-pill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 18.5h11a4 4 0 0 0 .4-8A6.5 6.5 0 0 0 5.3 9.4a4.6 4.6 0 0 0 1.2 9.1Z"/><path d="m9 12.5 2 2 4-4"/></svg><span class="cloud-pill-text">Bulut: Bağlı değil</span></div>
+      <button id="account" class="account-button" aria-label="Bulut hesabı"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c.5-4.3 3.2-6.5 8-6.5s7.5 2.2 8 6.5"/></svg></button>
     </header>
     <main><div id="view"></div></main>
     <footer class="app-footer">Spor Takip 2.0 <span>·</span> Antrenmanlarını kaydet, gelişimini takip et.</footer>
   </div>
 </div>
 <nav class="mobile-tabs" aria-label="Alt menü">
-  <button class="active" data-tab="home"><span>⌂</span><small>Ana Sayfa</small></button>
-  <button data-tab="train"><span>✚</span><small>Antrenman</small></button>
-  <button data-tab="programs"><span>▱</span><small>Programlar</small></button>
-  <button data-tab="history"><span>◷</span><small>Geçmiş</small></button>
-  <button data-tab="progress"><span>▥</span><small>Gelişim</small></button>
-  <button data-tab="weight"><span>▤</span><small>Ağırlık</small></button>
-  <button data-tab="settings"><span>☁</span><small>Hesap</small></button>
+  <button class="active" data-tab="home"><span><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><small>Ana Sayfa</small></button>
+  <button data-tab="train"><span><svg viewBox="0 0 24 24"><path d="M3 9v6m4-9v12m4-9v6m6-6v6m4-9v12m-10-6h6"/></svg></span><small>Antrenman</small></button>
+  <button data-tab="programs"><span><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5"/></svg></span><small>Programlar</small></button>
+  <button data-tab="history"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><small>Geçmiş</small></button>
+  <button data-tab="progress"><span><svg viewBox="0 0 24 24"><path d="M4 20v-7h4v7M10 20V9h4v11M16 20V4h4v16"/></svg></span><small>Gelişim</small></button>
 </nav>
 <div id="toast" class="toast" role="status"></div>
 <div id="modal"></div>

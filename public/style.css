@@ -464,3 +464,126 @@ input,select,textarea{border:1px solid #bcc9d8;background:linear-gradient(180deg
 @media (max-width:680px) and (orientation:portrait) {
   .train-page .control-divider { display:none !important; }
 }
+
+
+
+/* === Exact portrait reference refinements === */
+@media (max-width:680px) and (orientation:portrait) {
+  .topbar {
+    height:96px !important; min-height:96px !important;
+    padding:12px 12px 10px !important;
+    align-items:center !important;
+    background:linear-gradient(110deg,#061a2d 0%,#0a2b46 68%,#071d35 100%) !important;
+    border-bottom:2px solid #1c5368 !important;
+    box-shadow:0 5px 18px rgba(4,21,39,.24) !important;
+  }
+  .mobile-brand { gap:9px !important; align-items:center !important; }
+  .mobile-brand-icon { width:38px !important; height:38px !important; flex-basis:38px !important; }
+  .mobile-brand-icon svg { width:38px !important; height:38px !important; }
+  .mobile-brand-copy { display:flex !important; flex-direction:column !important; align-items:flex-start !important; gap:1px !important; min-width:0; }
+  .mobile-brand-name { font-size:18px !important; line-height:1.05 !important; letter-spacing:-.45px; }
+  .mobile-brand-copy small { display:block !important; color:#c2d7e5 !important; font-size:10px !important; line-height:1.1 !important; margin:2px 0 0 !important; }
+  .cloud-pill {
+    display:flex !important; align-items:center !important; justify-content:center !important;
+    gap:6px !important; max-width:132px !important; min-width:0 !important;
+    padding:8px 9px !important; border-radius:999px !important;
+    background:linear-gradient(110deg,#d9fbf8,#bdf4ef) !important;
+    border:1px solid #8ce5dc !important; color:#07334a !important;
+    box-shadow:0 3px 10px rgba(0,0,0,.12) !important;
+    font-size:10px !important; font-weight:850 !important;
+  }
+  .cloud-pill-icon { width:20px !important; height:20px !important; flex:0 0 20px; fill:none; stroke:#078f89; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .cloud-pill-text { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .account-button { width:38px !important; height:38px !important; flex:0 0 38px !important; display:grid !important; place-items:center; }
+  .account-button svg { width:23px; height:23px; fill:none; stroke:#fff; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .train-page .train-controls,
+  .train-page>.card:first-of-type {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    gap:7px !important; align-items:center !important;
+    padding:12px 10px !important;
+  }
+  .train-page .control-field { display:flex !important; flex-direction:row !important; align-items:center !important; gap:8px !important; }
+  .train-page .control-icon {
+    display:grid !important; place-items:center !important;
+    width:34px !important; height:38px !important; flex:0 0 34px !important;
+    color:#078f89 !important; font-size:0 !important;
+  }
+  .train-page .control-icon svg { display:block !important; width:31px !important; height:31px !important; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .train-page .control-body { min-width:0 !important; }
+  .train-page .control-body label { font-size:11px !important; font-weight:800 !important; white-space:nowrap; }
+  .train-page .control-body select,
+  .train-page .control-body input { height:39px !important; min-height:39px !important; font-size:12px !important; padding:5px 6px !important; }
+  .train-page .control-divider { display:none !important; }
+  .train-toolbar { display:flex !important; align-items:center !important; justify-content:space-between !important; gap:8px !important; }
+  .train-toolbar h2 { font-size:21px !important; }
+  .train-toolbar>button { flex:0 0 auto !important; padding:9px 12px !important; font-size:12px !important; }
+  .exercise-card {
+    grid-template-columns:minmax(0,1fr) 70px !important;
+    grid-template-rows:auto auto !important;
+    padding:11px !important; gap:7px 8px !important;
+  }
+  .exercise-left { grid-column:1 !important; grid-row:1 !important; align-items:center !important; gap:9px !important; }
+  .exercise-icon {
+    display:grid !important; place-items:center !important;
+    width:48px !important; height:48px !important; flex:0 0 48px !important;
+    color:#fff !important; background:linear-gradient(145deg,#13c8b8,#087e79) !important;
+    border-radius:12px !important; box-shadow:0 4px 10px rgba(0,144,133,.2);
+    font-size:0 !important;
+  }
+  .exercise-icon svg { width:32px !important; height:32px !important; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+  .exercise-info { min-width:0 !important; overflow:visible !important; }
+  .exercise-info>b { display:block; font-size:15px !important; line-height:1.12 !important; margin:0 0 3px !important; white-space:normal; }
+  .last-date {
+    display:flex !important; align-items:center !important; gap:4px !important;
+    white-space:nowrap !important; flex-wrap:nowrap !important;
+    font-size:10px !important; line-height:1.1 !important;
+    margin:2px 0 3px !important; letter-spacing:-.15px;
+  }
+  .last-date span { flex:0 0 auto; }
+  .last-sets { display:flex !important; flex-wrap:wrap !important; gap:4px !important; margin:3px 0 0 !important; }
+  .last-set-chip { display:inline-flex !important; white-space:nowrap !important; font-size:10px !important; line-height:1.05 !important; padding:4px 6px !important; }
+  .exercise-delete { grid-column:2 !important; grid-row:1 !important; justify-self:end !important; align-self:start !important; margin:0 !important; }
+  .exercise-entry { grid-column:1 / -1 !important; grid-row:2 !important; display:grid !important; grid-template-columns:minmax(0,1fr) 76px !important; gap:7px !important; align-items:end !important; }
+  .exercise-table-head, .exercise-entry .set {
+    grid-column:1 !important;
+    display:grid !important; grid-template-columns:30px minmax(0,1fr) minmax(0,1fr) !important;
+    gap:6px !important; align-items:center !important;
+  }
+  .exercise-table-head { font-size:10px !important; margin:0 0 2px !important; }
+  .exercise-entry .set { margin:4px 0 !important; }
+  .exercise-entry .set input { height:38px !important; min-height:38px !important; font-size:15px !important; }
+  .add-set-button {
+    grid-column:2 !important; grid-row:1 / span 3 !important;
+    justify-self:end !important; align-self:end !important;
+    width:76px !important; margin:0 0 4px !important;
+    padding:8px 4px !important; font-size:10px !important;
+    line-height:1.1 !important; white-space:normal !important;
+  }
+  nav.mobile-tabs {
+    display:flex !important; flex-flow:row nowrap !important;
+    justify-content:space-around !important; align-items:stretch !important;
+    gap:3px !important; overflow:hidden !important;
+    background:linear-gradient(180deg,#08243b,#061a2d) !important;
+    border-top:1px solid #1d5268 !important;
+    padding:7px 6px calc(7px + env(safe-area-inset-bottom)) !important;
+  }
+  nav.mobile-tabs button {
+    display:flex !important; flex:1 1 20% !important; min-width:0 !important;
+    max-width:none !important; min-height:58px !important;
+    flex-direction:column !important; align-items:center !important; justify-content:center !important;
+    gap:4px !important; padding:5px 1px !important; border-radius:11px !important;
+    color:#d9e7f0 !important; background:transparent !important;
+  }
+  nav.mobile-tabs button span { display:grid !important; place-items:center !important; width:27px !important; height:27px !important; font-size:0 !important; }
+  nav.mobile-tabs button span svg {
+    display:block !important; width:25px !important; height:25px !important;
+    fill:none !important; stroke:currentColor !important; stroke-width:1.9 !important;
+    stroke-linecap:round !important; stroke-linejoin:round !important;
+  }
+  nav.mobile-tabs button small { display:block !important; font-size:10px !important; line-height:1.05 !important; font-weight:750 !important; }
+  nav.mobile-tabs button.active {
+    background:linear-gradient(135deg,#08b9ad,#087c78) !important;
+    color:#fff !important; border:1px solid #38ded3 !important;
+    box-shadow:0 0 13px rgba(0,202,190,.27) !important;
+  }
+}
