@@ -400,3 +400,67 @@ input,select,textarea{border:1px solid #bcc9d8;background:linear-gradient(180deg
     font-weight: 850 !important;
   }
 }
+
+/* Final portrait refinements: align the phone UI with the approved reference */
+@media (max-width:680px) and (orientation:portrait) {
+  .topbar {
+    min-height:68px !important; height:68px !important;
+    padding:0 12px !important; gap:8px !important;
+    background:linear-gradient(105deg,#061a30 0%,#0b2945 72%,#071d35 100%) !important;
+    border-bottom:1px solid #16445d !important;
+    box-shadow:0 4px 14px rgba(3,18,34,.2) !important;
+  }
+  .mobile-brand { display:flex !important; align-items:center; gap:8px !important; min-width:0; color:#f7fbff !important; font-size:16px !important; font-weight:850; white-space:nowrap; }
+  .mobile-brand-icon { display:grid; place-items:center; width:31px; height:31px; flex:0 0 31px; color:#24d4ca; }
+  .mobile-brand-icon svg { width:31px; height:31px; }
+  .mobile-brand-name { color:#f7fbff !important; }
+  .mobile-brand-name b { color:#35d8ce !important; }
+  .cloud-pill { margin-left:auto; max-width:none !important; padding:7px 9px !important; background:rgba(20,190,179,.13) !important; border:1px solid rgba(48,218,207,.48) !important; color:#bdf8f1 !important; font-size:10px !important; white-space:nowrap; }
+  .account-button { width:36px !important; height:36px !important; flex:0 0 36px; background:#183b5d !important; color:#fff !important; border:1px solid rgba(177,218,235,.22) !important; }
+  main { padding-top:13px !important; }
+  .page-heading { gap:9px !important; margin-bottom:12px !important; }
+  .page-heading h1 { line-height:1.08 !important; margin:0 0 2px !important; }
+  .page-heading .sub { line-height:1.22 !important; }
+  .train-page .train-controls,
+  .train-page>.card:first-of-type {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    align-items:center !important; gap:9px !important; padding:11px 10px !important;
+  }
+  .train-page .control-divider { width:1px !important; height:48px !important; justify-self:center; }
+  .train-page .control-field { min-width:0 !important; gap:6px !important; }
+  .train-page .control-icon { display:none !important; }
+  .train-page .control-body { min-width:0 !important; width:100%; }
+  .train-page .control-body label { display:block; margin:0 0 4px !important; font-size:11px !important; line-height:1.1 !important; }
+  .train-page .control-body select,
+  .train-page .control-body input { width:100% !important; min-width:0 !important; height:39px !important; min-height:39px !important; padding:5px 7px !important; font-size:12px !important; }
+  .train-toolbar { align-items:center !important; margin:12px 0 7px !important; }
+  .train-toolbar h2 { margin:0 !important; line-height:1.1 !important; }
+  .exercise-card {
+    grid-template-columns:minmax(0,1fr) 70px !important;
+    grid-template-rows:auto auto !important;
+    align-items:start !important; gap:7px 8px !important;
+    padding:10px !important; margin:8px 0 !important;
+  }
+  .exercise-left { grid-column:1 !important; grid-row:1 !important; align-items:center !important; gap:9px !important; }
+  .exercise-icon { width:42px !important; height:42px !important; flex:0 0 42px !important; border-radius:11px !important; }
+  .exercise-info>b { margin:0 0 2px !important; line-height:1.12 !important; }
+  .last-date { margin:1px 0 !important; line-height:1.15 !important; }
+  .last-sets { margin:3px 0 0 !important; gap:4px !important; }
+  .last-set-chip { padding:3px 5px !important; line-height:1.1 !important; }
+  .exercise-delete { grid-column:2 !important; grid-row:1 !important; justify-self:end !important; align-self:start !important; margin:0 !important; padding:6px 8px !important; }
+  .exercise-entry { grid-column:1 / -1 !important; grid-row:2 !important; padding:0 !important; display:grid !important; grid-template-columns:minmax(0,1fr) 70px !important; column-gap:8px !important; align-items:end !important; }
+  .exercise-table-head,
+  .exercise-entry .set { grid-column:1 !important; grid-template-columns:28px minmax(0,1fr) minmax(0,1fr) !important; gap:6px !important; }
+  .exercise-table-head { margin:0 0 2px !important; line-height:1.1 !important; }
+  .exercise-entry .set { margin:3px 0 !important; }
+  .exercise-entry .set input { height:36px !important; min-height:36px !important; }
+  .add-set-button { grid-column:2 !important; grid-row:2 / span 2 !important; justify-self:end !important; align-self:end !important; width:70px !important; margin:0 0 3px !important; padding:6px 4px !important; font-size:10px !important; white-space:normal !important; line-height:1.1 !important; }
+  nav.mobile-tabs { display:flex !important; justify-content:space-around !important; gap:2px !important; overflow:hidden !important; padding:6px 5px calc(6px + env(safe-area-inset-bottom)) !important; }
+  nav.mobile-tabs button { flex:1 1 20% !important; min-width:0 !important; max-width:none !important; min-height:53px !important; gap:4px !important; padding:5px 1px !important; }
+  nav.mobile-tabs button span { display:grid !important; place-items:center; width:24px; height:24px; font-size:0 !important; }
+  nav.mobile-tabs button span svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  nav.mobile-tabs button small { font-size:9px !important; line-height:1.1 !important; font-weight:700 !important; white-space:nowrap; }
+}
+@media (max-width:680px) and (orientation:portrait) {
+  .train-page .control-divider { display:none !important; }
+}
